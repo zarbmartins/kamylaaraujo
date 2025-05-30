@@ -1,12 +1,14 @@
 const heartsContainer = document.getElementById('hearts');
 const game = document.getElementById('game');
 const question = document.getElementById('question');
+const intermediate = document.getElementById('intermediate');
+const btnContinuar = document.getElementById('btn-continuar');
 const btnSim = document.getElementById('btn-sim');
 const btnNao = document.getElementById('btn-nao');
 const mensagem = document.getElementById('mensagem');
 
-const totalHearts = 15;       // total de corações (vermelhos + dourados)
-const goldenHeartsCount = 3;  // quantidade de corações dourados
+const totalHearts = 15;
+const goldenHeartsCount = 3;
 
 let goldenHeartsClicked = 0;
 
@@ -14,16 +16,14 @@ function startGame() {
     const containerWidth = heartsContainer.clientWidth;
     const containerHeight = heartsContainer.clientHeight;
 
-    // Limpa container para evitar duplicar corações se startGame rodar mais de uma vez
     heartsContainer.innerHTML = '';
 
-    // Resetar contadores e mensagens
     goldenHeartsClicked = 0;
     mensagem.textContent = '';
     question.style.display = 'none';
+    intermediate.style.display = 'none';
     game.style.display = 'block';
 
-    // Criar os corações dourados
     for (let i = 0; i < goldenHeartsCount; i++) {
         const heart = document.createElement('div');
         heart.classList.add('heart');
@@ -33,21 +33,20 @@ function startGame() {
         heart.style.top = Math.random() * (containerHeight - 50) + 'px';
 
         heart.addEventListener('click', () => {
-            if (heart.style.opacity === '0.5') return; // evita múltiplos cliques no mesmo coração
+            if (heart.style.opacity === '0.5') return;
 
             goldenHeartsClicked++;
-            heart.style.opacity = 0.5; // marca que foi clicado
+            heart.style.opacity = 0.5;
 
             if (goldenHeartsClicked >= goldenHeartsCount) {
                 game.style.display = 'none';
-                question.style.display = 'block';
+                intermediate.style.display = 'block';
             }
         });
 
         heartsContainer.appendChild(heart);
     }
 
-    // Criar os corações vermelhos restantes
     const redHeartsCount = totalHearts - goldenHeartsCount;
     for (let i = 0; i < redHeartsCount; i++) {
         const heart = document.createElement('div');
@@ -65,13 +64,19 @@ function startGame() {
     }
 }
 
-// Função para resposta do botão "Sim"
-btnSim.addEventListener('click', () => {
-    mensagem.style.color = 'black';
-    mensagem.textContent = 'Dividir a vida com você será um imenso privilégio. Te adoro muito! 💖';
+// Botão da tela intermediária
+btnContinuar.addEventListener('click', () => {
+    intermediate.style.display = 'none';
+    question.style.display = 'block';
 });
 
-// Função para resposta do botão "Não"
+// Função botão "Sim"
+btnSim.addEventListener('click', () => {
+    mensagem.style.color = 'black';
+    mensagem.textContent = 'Muito obrigada por aceitar dividir a vida comigo! 💖';
+});
+
+// Função botão "Não"
 btnNao.addEventListener('click', () => {
     mensagem.style.color = 'black';
     mensagem.textContent = 'Que pena, vai namorar comigo sim! Mulher minha não tem querer.';
