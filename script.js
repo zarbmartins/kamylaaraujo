@@ -68,7 +68,7 @@ function startGame() {
 // Função para resposta do botão "Sim"
 btnSim.addEventListener('click', () => {
     mensagem.style.color = 'black';
-    mensagem.textContent = 'Obrigada! Estou muito feliz que aceitou namorar comigo! 💖';
+    mensagem.textContent = 'Dividir a vida com você será um imenso privilégio. Te adoro 💖';
 });
 
 // Função para resposta do botão "Não"
