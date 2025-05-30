@@ -73,7 +73,7 @@ btnContinuar.addEventListener('click', () => {
 // Função botão "Sim"
 btnSim.addEventListener('click', () => {
     mensagem.style.color = 'black';
-    mensagem.textContent = 'Muito obrigada por aceitar dividir a vida comigo! 💖';
+    mensagem.textContent = 'Será um prazer imensurável dividir a vida com você, meu amor! 💖';
 });
 
 // Função botão "Não"
