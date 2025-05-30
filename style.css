@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffd1dc, #ffe6f0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tela do jogo */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.game-container h1 {
+    color: #e91e63;
+    margin-bottom: 10px;
+}
+
+.game-container p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.hearts {
+    position: relative;
+    width: 90vw;
+    height: 60vh;
+}
+
+.heart {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    cursor: pointer;
+    animation: float 5s linear infinite;
+}
+
+/* Container do pedido */
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    display: none;
+}
+
+h1 {
+    color: #e91e63;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+#btn-sim {
+    background-color: #e91e63;
+    color: white;
+}
+
+#btn-sim:hover {
+    background-color: #c2185b;
+}
+
+#btn-nao {
+    background-color: #f8bbd0;
+    color: #e91e63;
+}
+
+#btn-nao:hover {
+    background-color: #f48fb1;
+}
+
+.mensagem {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #333;
+    animation: fadeIn 0.5s ease-in;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-30px) rotate(20deg); }
+    100% { transform: translateY(0) rotate(0); }
+}

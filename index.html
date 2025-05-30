@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pedido Especial</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Pré-carregamento das imagens dos corações -->
+    <img src="criativo-67953e3a7ffa0img-2025-01-2567953e3a7ffa2-removebg-preview.png" alt="Coração dourado" style="display:none;" />
+    <img src="coracao_-removebg-preview.png" alt="Coração vermelho" style="display:none;" />
+
+    <!-- Tela do jogo -->
+    <div class="game-container" id="game">
+        <h1>Acerte no Coração Dourado!</h1>
+        <p>Clique no coração dourado para desbloquear a pergunta especial!</p>
+        <div class="hearts" id="hearts"></div>
+    </div>
+
+    <!-- Tela do pedido -->
+    <div class="container" id="question">
+        <h1>Kamyla, aceita namorar comigo?</h1>
+        <div class="buttons">
+            <button id="btn-sim">Sim</button>
+            <button id="btn-nao">Não</button>
+        </div>
+        <div id="mensagem" class="mensagem"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
