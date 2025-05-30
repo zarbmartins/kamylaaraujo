@@ -68,7 +68,7 @@ function startGame() {
 // Função para resposta do botão "Sim"
 btnSim.addEventListener('click', () => {
     mensagem.style.color = 'black';
-    mensagem.textContent = 'Dividir a vida com você será um imenso privilégio. Te adoro 💖';
+    mensagem.textContent = 'Dividir a vida com você será um imenso privilégio. Te adoro muito! 💖';
 });
 
 // Função para resposta do botão "Não"
